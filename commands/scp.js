@@ -23,7 +23,6 @@ module.exports = {
 
     async execute(interaction) {
         const scpNumber = interaction.options.getString('input');
-        console.log(scpNumber);
        try {
          //fazendo requisição para a api de SCP        
         /**
@@ -53,7 +52,7 @@ async function getScp(scpNumber){
     const scpData =  await fetch(`${URL_API}/${scpNumber}`,{
         method: "GET"
     });
-    if(scpData.status != 200){
+    if(scpData.status == 204){
         interecation.reply("Não foi possível encontrar o SCP entre em contato com o desenvolvedor do bot");
     }
     const scpJson = await scpData.json();
