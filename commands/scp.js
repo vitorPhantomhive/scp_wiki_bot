@@ -22,7 +22,7 @@ module.exports = {
         ),
 
     async execute(interaction) {
-        const scpNumber = interaction.options.getString('input');
+        const scpNumber = interaction.options.getString('número');
        try {
          //fazendo requisição para a api de SCP        
         /**
