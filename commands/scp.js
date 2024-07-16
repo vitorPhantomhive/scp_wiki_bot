@@ -16,7 +16,7 @@ module.exports = {
         .setName("scp")
         .setDescription("Informe um número de SCP e receba as informações dele")
         .addStringOption(option => 
-            option.setName("input")
+            option.setName("número")
                 .setDescription("Digite o número do SCP")
                 .setRequired(true)
         ),
