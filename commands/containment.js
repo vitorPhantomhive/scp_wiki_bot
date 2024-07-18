@@ -13,7 +13,7 @@ const URL_API = 'https://apiscp.azurewebsites.net/api/Scp/';
 
 module.exports = {
   data:  new SlashCommandBuilder()
-        .setName("containment")
+        .setName("contenção")
         .setDescription("Informe um número de SCP e receba descrição dele")
         .addStringOption(option => 
             option.setName("número")
@@ -31,8 +31,10 @@ module.exports = {
         const scp = await getScp(scpNumber);
 
         const scpEmbed = new EmbedBuilder()
-            .setTitle(`SCP: ${scp.itemNumber}`)
-            .setDescription(`Procedimentos de contenção: ${scp.containmentProcedures}`);
+            .setTitle(`Procedimentos de contenção`)
+            .setColor(0x0099FF)
+            .setURL(`http://scp-pt-br.wikidot.com/scp-${scpNumber}`)
+            .setDescription(`${scp.containmentProcedures}`);
 
        await interaction.reply({embeds: [scpEmbed]});
        } catch (error) {
